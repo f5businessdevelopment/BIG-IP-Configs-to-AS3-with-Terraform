@@ -1,0 +1,12 @@
+
+variable "org" {
+ default = "${org}"
+}
+
+variable "works" {
+ default = "${works}"
+}
+
+variable "prefix" {
+ default = "${prefix}"
+}
