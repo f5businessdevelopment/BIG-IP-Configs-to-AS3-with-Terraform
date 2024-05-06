@@ -46,7 +46,7 @@ output "prefix" {
 }
 
 data "template_file" "tfcvar" {
-  template = file("Day0/tfcvariables.tf.example")
+  template = file("day0/tfcvariables.tf.example")
   vars = {
     org    = "STUDENT-${local.prefix}"
     works  = "workspace-${local.prefix}"
@@ -56,11 +56,11 @@ data "template_file" "tfcvar" {
 
 resource "local_file" "tfcvar" {
   content  = data.template_file.tfcvar.rendered
-  filename = "Day0/tfcvariables.tf"
+  filename = "day0/tfcvariables.tf"
 }
 
 data "template_file" "cloud" {
-  template = file("Day0/cloud.tf.example")
+  template = file("day0/cloud.tf.example")
   vars = {
     org   = "STUDENT-${local.prefix}"
     works = "workspace-${local.prefix}"
@@ -68,6 +68,6 @@ data "template_file" "cloud" {
 }
 resource "local_file" "cloud" {
   content  = data.template_file.cloud.rendered
-  filename = "Day0/cloud.tf"
+  filename = "day0/cloud.tf"
 }
 
