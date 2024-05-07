@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "<your org STUDENT-XXXX>"
+    organization = "STUDENT-0rCK"
 
     workspaces {
       name = "day1"
@@ -40,6 +40,12 @@ resource "bigip_ltm_pool_attachment" "vs_tc1" {
   pool = bigip_ltm_pool.vs_tc1.name
   node = "10.0.0.171:80"
 }
+
+resource "bigip_ltm_pool_attachment" "vs_tc2" {
+  pool = bigip_ltm_pool.vs_tc1.name
+  node = "10.0.0.172:80"
+}
+
 
 resource "bigip_ltm_virtual_server" "vs_tc1" {
   pool                       = bigip_ltm_pool.vs_tc1.name
