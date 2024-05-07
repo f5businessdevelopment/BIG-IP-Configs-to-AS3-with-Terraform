@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "STUDENT-BSkd"
+    organization = "STUDENT-0rCK"
 
     workspaces {
       name = "AS3app"
@@ -21,6 +21,6 @@ provider "bigip" {
 }
 # Example Usage for json file
 resource "bigip_as3" "as3-example1" {
-  as3_json = file("vs_tc1.json")
+  as3_json = file("vs_tc2.json")
 }
 
