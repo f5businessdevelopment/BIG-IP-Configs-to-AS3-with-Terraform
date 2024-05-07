@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "STUDENT-0rCK"
+    organization = "<Your Organisation STUDENT-XXXX"
 
     workspaces {
       name = "day1"
