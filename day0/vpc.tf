@@ -9,7 +9,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.4.0"
 
-  name = "student-var.prefix-vpc"
+  name = "student-${var.prefix}-vpc"
   cidr = "10.0.0.0/16"
 
   azs             = ["us-west-2a"]
