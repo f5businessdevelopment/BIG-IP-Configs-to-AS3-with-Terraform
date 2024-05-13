@@ -51,6 +51,7 @@ data "template_file" "tfcvar" {
     org    = "STUDENT-${local.prefix}"
     works  = "workspace-${local.prefix}"
     prefix = "${local.prefix}"
+    agentoken = tfe_agent_token.bigip-agent-token.token
   }
 }
 
