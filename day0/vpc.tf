@@ -13,7 +13,6 @@ module "vpc" {
   cidr = "10.0.0.0/16"
 
   azs             = ["us-west-2a"]
-  private_subnets = ["10.0.2.0/24"]
   public_subnets  = ["10.0.0.0/24"]
 
   enable_nat_gateway = true
@@ -47,8 +46,8 @@ resource "aws_security_group" "f5" {
   }
 
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = 0
+    to_port     = 65535
     protocol    = "tcp"
     cidr_blocks = ["10.0.0.0/16"]
   }
