@@ -71,3 +71,24 @@ resource "local_file" "cloud" {
   filename = "day0/cloud.tf"
 }
 
+# Define a Terraform Cloud/Enterprise agent pool
+resource "tfe_agent_pool" "bigip-agent-pool" {
+  # Specifies the name of the agent pool
+  name                 = "big-pool"
+  
+  # Specifies the organization to which the agent pool belongs
+  organization         = tfe_organization.Org.name
+  
+  # Indicates whether the agent pool is scoped to the organization (default: true)
+  organization_scoped  = true
+}
+
+# Generate an agent token for authentication with the agent pool
+resource "tfe_agent_token" "bigip-agent-token" {
+  # Specifies the ID of the agent pool to associate the token with
+  agent_pool_id = tfe_agent_pool.bigip-agent-pool.id
+  
+  # Provides a description for the agent token
+  description   = "bigip-agent-token"
+}
+
