@@ -21,7 +21,7 @@ agent_pool = "big-pool"
   }
 }
 
-output "public_ip" {
+output "agent_public_ip" {
   value = aws_instance.example.public_ip
 }
 
