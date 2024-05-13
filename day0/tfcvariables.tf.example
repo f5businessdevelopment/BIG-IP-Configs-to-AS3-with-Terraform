@@ -10,3 +10,6 @@ variable "works" {
 variable "prefix" {
  default = "${prefix}"
 }
+variable "agentoken" {
+ default = "${agentoken}"
+}
